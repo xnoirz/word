@@ -20,6 +20,7 @@ class Colors:
     yellow = '\033[1;33m'
     blue = '\033[1;34m'
     cyan = '\033[1;36m'
+    purple ='\[\033[0;35m'
     reset = '\033[0m'
 
 # Banner atau tampilan alat
